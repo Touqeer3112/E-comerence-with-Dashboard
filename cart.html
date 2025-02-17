@@ -1,0 +1,41 @@
+<!-- cart.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <button id="checkout-btn">Proceed to Checkout</button>
+    <button><a href="website.html">Back to Shopping</a></button>
+
+    <script>
+    window.onload = function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItemsContainer = document.getElementById('cart-items');
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cart.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-item');
+                productDiv.innerHTML = `
+                    <h3>${product.name}</h3>
+                    <p>Price: ${product.price}</p>
+                `;
+                cartItemsContainer.appendChild(productDiv);
+            });
+        }
+    };
+
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+        alert('Proceeding to Checkout');
+        localStorage.removeItem('cart'); // Clear cart after checkout
+    });
+    </script>
+</body>
+</html> -->

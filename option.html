@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+    <style>
+             body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+
+        .btn-submit {
+            padding: 10px 20px;
+            background-color: rgb(113, 99, 186);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: rgb(136, 117, 233);
+        }
+
+        .error {
+            color: red;
+            display: none;
+        }
+
+       
+        #adminCodePopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(113, 99, 186);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+        }
+
+        .popup-btn {
+            padding: 10px 20px;
+            background-color: rgb(236, 235, 240);
+            color: rgb(113, 99, 186);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-btn:hover {
+            background-color: rgb(127, 103, 245);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select Role</h2>
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="role" value="user" id="userRadio"> User
+            </label>
+            <label>
+                <input type="radio" name="role" value="admin" id="adminRadio"> Admin
+            </label>
+        </div>
+
+        <div id="adminCodePopup" style="display: none;">
+            <h3>Enter Admin Code</h3>
+            <input type="text" id="adminCode" placeholder="Enter Code" /><br><br>
+            <button class="popup-btn" id="adminCodeSubmit">Submit</button>
+            <p id="popupError" style="color: red; display: none;">Incorrect code!</p>
+        </div>
+
+        <button class="btn-submit" id="submitButton">Submit</button>
+    </div>
+    
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var role = document.querySelector('input[name="role"]:checked');
+            if (role) {
+                
+                localStorage.setItem('userRole', role.value);
+
+                if (role.value === "user") {
+                    window.location.href = "website.html";  
+                } else if (role.value === "admin") {
+                    document.getElementById('adminCodePopup').style.display = 'block'; 
+                }
+            } else {
+                alert("Please select a role!");
+            }
+        });
+
+        document.getElementById('adminCodeSubmit').addEventListener('click', function() {
+            var enteredCode = document.getElementById('adminCode').value;
+            if (enteredCode === "admin123") {
+                window.location.href = "dashboard.html"; 
+            } else {
+                document.getElementById('popupError').style.display = 'block';  
+            }
+        });
+        var userRole = localStorage.getItem('userRole') || 'User';
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

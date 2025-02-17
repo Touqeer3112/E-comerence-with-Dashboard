@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+                                 * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+            outline: none;
+            font-family: sans-serif;
+        }
+        
+        body {
+            display: flex;
+            font-family: 'Arial', sans-serif;
+            background: #f3f3f3;
+            height: 100vh; 
+        }
+        
+        .sidebar {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 240px; 
+            height: 100%; 
+            padding: 0;
+            background: rgb(113, 99, 255);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        
+        .logo {
+            height: 80px;
+            padding: 16px;
+        }
+        
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .menu li {
+            padding: 1rem;
+            margin: 8px 0;
+            border-radius: 8px;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .menu li:hover, .active {
+            background: grey;
+        }
+        
+        .menu a {
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            display: flex;
+            gap: 8%;
+            align-items: center;
+        }
+        
+        .menu a i {
+            font-size: 18px;
+        }
+        
+        .main-content {
+            margin-left: 8%; 
+            width: calc(100% - 260px); 
+            padding: 3% 2%;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* background: #ebe9e9; */
+            box-sizing: border-box;
+        }
+        
+        
+        .header-wrapper {
+            margin-left: 8%; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px 2rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .header-title {
+            color: rgb(113, 99, 186);
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+           /* align-items: center; */
+           text-align: center;
+        }
+        
+        .search-box {
+            background: rgb(235, 237, 237);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+        }
+        
+        .search-box input {
+            background: transparent;
+            padding: 10px;
+            
+        }
+        
+        .search-box i {
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        
+        .profile-pic img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        
+        .user-table {
+            width: 90%; 
+            margin-top: 2rem;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        .user-table th, .user-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .user-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        
+        .user-table th {
+            background-color: rgb(113, 99, 186);
+            color: white;
+            font-weight: bold;
+        }
+        .header-wrapper .user-info {
+    gap: 15px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.btn{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: red; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+.menu li a i {
+            font-size: 18px;
+        }
+
+        .menu li a span {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboard" class="main-content">
+        <div class="sidebar">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li class="active"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i><span>Profile</span></a></li>
+                <li><a href="sell.html"><i class="fa-solid fa-cart-shopping"></i><span>Sell</span></a></li>
+                <li><a href="website.html"><i class="fa-solid fa-briefcase"></i><span>Visit Website</span></a></li>
+                <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a></li>
+            </ul>
+        </div>
+    
+        <div class="main-content">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <span>Simple</span>
+                    <h2>Dashboard</h2>
+                </div>
+                <div class="user-info">
+                    <div class="profile-pic">
+                        <img src="./MT logo.jpg" alt="User Picture" />
+                    </div>
+                </div>
+            </div>
+    
+            <h3>Recent Users</h3>
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body"></tbody>
+            </table>
+            <button class="btn" onclick="clearUserData()">Clear Data</button>
+        </div>
+    </div>
+    
+    <script>
+        function displayUsers() {
+            var userEmail = localStorage.getItem('userEmail');
+            var userPassword = localStorage.getItem('userPassword');
+            var userName = localStorage.getItem('userName');
+            var userRole = localStorage.getItem('userRole') || 'User';  
+    
+            if (userEmail && userPassword && userName) {
+                var tableBody = document.getElementById('user-table-body');
+                var newRow = tableBody.insertRow();
+                newRow.innerHTML = `<td>1</td><td>${userName}</td><td>${userEmail}</td><td>${userPassword}</td><td>${userRole}</td>`;
+            }
+        }
+    
+        function clearUserData() {
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userPassword');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userRole');
+            alert('User data cleared');
+            window.location.reload();
+        }
+    
+        displayUsers();
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <div id="dashboard" class="main-content">
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active"><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a></li>
+            <li><a href="profile.html"><i class="fa-solid fa-user"></i><span>Profile</span></a></li>
+            <li><a href="website.html"><i class="fa-solid fa-briefcase"></i><span>Visit Website</span></a></li>
+            <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <span>Simple</span>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="user-info">
+                <div class="profile-pic">
+                    <img src="./MT logo.jpg" alt="User Picture" />
+                </div>
+            </div>
+        </div>
+
+        <h3>Recent Users</h3>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body"></tbody>
+        </table>
+        <button class="btn" onclick="clearUserData()">Clear Data</button>
+    </div>
+</div> -->
+
+<!-- <script>
+    function displayUsers() {
+        var userEmail = localStorage.getItem('userEmail');
+        var userPassword = localStorage.getItem('userPassword');
+        var userName = localStorage.getItem('userName');
+        var userRole = localStorage.getItem('userRole') || 'User';  
+
+        if (userEmail && userPassword && userName) {
+            var tableBody = document.getElementById('user-table-body');
+            var newRow = tableBody.insertRow();
+            newRow.innerHTML = `<td>1</td><td>${userName}</td><td>${userEmail}</td><td>${userPassword}</td><td>${userRole}</td>`;
+        }
+    }
+
+    function clearUserData() {
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('userPassword');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userRole');
+        alert('User data cleared');
+        window.location.reload();
+    }
+
+    displayUsers();
+</script> -->
+
+
