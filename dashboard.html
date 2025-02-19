@@ -6,7 +6,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-                                 * {
+        * {
             margin: 0;
             padding: 0;
             border: none;
@@ -14,20 +14,20 @@
             outline: none;
             font-family: sans-serif;
         }
-        
+
         body {
             display: flex;
             font-family: 'Arial', sans-serif;
             background: #f3f3f3;
-            height: 100vh; 
+            height: 100vh;
         }
-        
+
         .sidebar {
-            position: fixed; 
+            position: fixed;
             top: 0;
             left: 0;
-            width: 240px; 
-            height: 100%; 
+            width: 240px;
+            height: 100%;
             padding: 0;
             background: rgb(113, 99, 255);
             color: white;
@@ -35,29 +35,29 @@
             flex-direction: column;
             box-sizing: border-box;
         }
-        
+
         .logo {
             height: 80px;
             padding: 16px;
         }
-        
+
         .menu {
             list-style: none;
             padding: 0;
             margin-top: 20px;
         }
-        
+
         .menu li {
             padding: 1rem;
             margin: 8px 0;
             border-radius: 8px;
             transition: all 0.5s ease-in-out;
         }
-        
+
         .menu li:hover, .active {
             background: grey;
         }
-        
+
         .menu a {
             color: white;
             font-size: 14px;
@@ -66,26 +66,24 @@
             gap: 8%;
             align-items: center;
         }
-        
+
         .menu a i {
             font-size: 18px;
         }
-        
+
         .main-content {
-            margin-left: 8%; 
-            width: calc(100% - 260px); 
+            margin-left: 8%;
+            width: calc(100% - 260px);
             padding: 3% 2%;
-            min-height: 100vh; 
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* background: #ebe9e9; */
             box-sizing: border-box;
         }
-        
-        
+
         .header-wrapper {
-            margin-left: 8%; 
+            margin-left: 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -95,19 +93,18 @@
             width: 100%;
             box-sizing: border-box;
         }
-        
+
         .header-title {
             color: rgb(113, 99, 186);
         }
-        
+
         .user-info {
             display: flex;
             align-items: center;
             gap: 1rem;
-           /* align-items: center; */
-           text-align: center;
+            text-align: center;
         }
-        
+
         .search-box {
             background: rgb(235, 237, 237);
             border-radius: 15px;
@@ -116,75 +113,55 @@
             gap: 5px;
             padding: 4px 12px;
         }
-        
+
         .search-box input {
             background: transparent;
             padding: 10px;
-            
         }
-        
+
         .search-box i {
             font-size: 1.2rem;
             cursor: pointer;
         }
-        
+
         .profile-pic img {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
         }
-        
-        
+
         .user-table {
-            width: 90%; 
+            width: 90%;
             margin-top: 2rem;
             border-collapse: collapse;
             text-align: center;
         }
-        
+
         .user-table th, .user-table td {
             padding: 12px;
             border: 1px solid #ddd;
             text-align: left;
         }
-        
+
         .user-table tr:hover {
             background-color: #f1f1f1;
         }
-        
-        
+
         .user-table th {
             background-color: rgb(113, 99, 186);
             color: white;
             font-weight: bold;
         }
-        .header-wrapper .user-info {
-    gap: 15px;
-    margin-right: 10px;
-}
 
-.search-box input {
-    padding: 8px;
-    font-size: 14px;
-}
-
-.btn{
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: red; 
-    color: white;
-    border: none;
-    border-radius: 5px; 
-    cursor: pointer;
-}
-
-.menu li a i {
-            font-size: 18px;
-        }
-
-        .menu li a span {
-            font-size: 14px;
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -200,7 +177,7 @@
                 <li><a href="index.html"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a></li>
             </ul>
         </div>
-    
+
         <div class="main-content">
             <div class="header-wrapper">
                 <div class="header-title">
@@ -213,7 +190,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <h3>Recent Users</h3>
             <table class="user-table">
                 <thead>
@@ -230,36 +207,58 @@
             <button class="btn" onclick="clearUserData()">Clear Data</button>
         </div>
     </div>
-    
+
     <script>
+      
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+     
         function displayUsers() {
-            var userEmail = localStorage.getItem('userEmail');
-            var userPassword = localStorage.getItem('userPassword');
-            var userName = localStorage.getItem('userName');
-            var userRole = localStorage.getItem('userRole') || 'User';  
-    
-            if (userEmail && userPassword && userName) {
-                var tableBody = document.getElementById('user-table-body');
-                var newRow = tableBody.insertRow();
-                newRow.innerHTML = `<td>1</td><td>${userName}</td><td>${userEmail}</td><td>${userPassword}</td><td>${userRole}</td>`;
-            }
+            const tableBody = document.getElementById('user-table-body');
+            tableBody.innerHTML = '';
+
+            users.forEach((user, index) => {
+                const newRow = tableBody.insertRow();
+                newRow.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.password}</td>
+                    <td>${user.role || 'User'}</td>
+                `;
+            });
         }
-    
+
+       
         function clearUserData() {
-            localStorage.removeItem('userEmail');
-            localStorage.removeItem('userPassword');
-            localStorage.removeItem('userName');
-            localStorage.removeItem('userRole');
+            localStorage.removeItem('users');
+            localStorage.removeItem('currentUser');
             alert('User data cleared');
             window.location.reload();
         }
-    
+
+      
         displayUsers();
     </script>
-
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

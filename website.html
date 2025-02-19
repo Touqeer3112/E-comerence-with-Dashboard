@@ -7,6 +7,674 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <style>
+                  .quantity-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+    }
+    
+    .quantity-btn {
+        background-color: #20adee;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 0.3rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .quantity-btn:hover {
+        background-color: #333;
+    }
+    
+    .quantity {
+        margin: 0 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    
+    .cart-btn {
+        background-color: #20adee;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 0.3rem;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+    
+    .cart-btn:hover {
+        background-color: #333;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fa-solid fa-bars"></label>
+        <a href="#" class="logo">MT<span>Brand</span></a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#product">Product</a>
+            <a href="sell.html">Profile</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="#" class="fa-solid fa-heart"></a>
+            <a href="profile.html" class="fa-solid fa-cart-shopping"></a>
+            <a href="#" class="fa-solid fa-user"></a>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>MT Brand</h3>
+            <span>New Design, New Collection</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore accusantium natus, ex fugit delectus quibusdam?</p>
+            <a href="#product" class="btn">Shop Now</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us</h1>
+        <div class="row">
+           <div class="video-container">
+            
+               <h3>Best T-shirt</h3>
+           </div>
+           <div class="content">
+               <h3>Why chose Us</h3>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis quasi quisquam repellat 
+                  laborum recusandae quidem labore neque rem fugiat doloremque atque nostrum maiores quae, sed fuga natus enim. Reiciendis, est!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur fuga odit officiis perferendis?
+                     Sed sequi repudiandae voluptatibus expedita ratione quibusdam error mollitia! Modi officiis mollitia est aspernatur nulla, quas vitae.</p>
+                     <a href="#" class="btn">Learn more</a>
+           </div>
+        </div>
+       </section>
+   
+   
+       <section class="icons-container">
+   
+   
+           <div class="icons">
+               <img src="./pic/assests/free delivery img.png"  width="50px"   height="50px" alt="">
+               <div class="info">
+                   <h3>free delivery</h3>
+                   <span>on all orders</span>
+               </div>
+           </div>
+   
+   
+   
+             <div class="icons">
+               <img src="./pic/assests/money.jpg"   width="50px"   height="50px" alt="">
+               <div class="info">
+                   <h3>10 day returns</h3>
+                   <span>moneyback guaranter</span>
+               </div>
+           </div>
+   
+   
+             <div class="icons">
+               <img src="./pic/assests/gift img.jpg"   width="50px"   height="50px" alt="">
+               <div class="info">
+                   <h3>offer and gift</h3>
+                   <span>on all orders</span>
+               </div>
+           </div>
+   
+   
+             <div class="icons">
+               <img src="./pic/assests/secure paymens img.png"   width="50px"   height="50px" alt="">
+               <div class="info">
+                   <h3>secure payment</h3>
+                   <span>protected by paypal</span>
+               </div>
+           </div>
+    
+       </section>
+  
+    <section class="product" id="product">
+        <h1 class="heading">Latest <span>Products</span></h1>
+        <div class="box-container">
+           
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt10.jpeg" alt="T-Shirt 1">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>T-Shirt 1</h3>
+                    <div class="price">$15.00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shir2.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                        
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 2</h3>
+                    <div class="price">$15:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-5%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt 3.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 3</h3>
+                    <div class="price">$18:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt4.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                     
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 4</h3>
+                    <div class="price">$14:00</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt11.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                    
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 5</h3>
+                    <div class="price">$14:00</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-11%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt6.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                     
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 6</h3>
+                    <div class="price">$16:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-8%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt7.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 7</h3>
+                    <div class="price">$17:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt8.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                     
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>        
+                <div class="content">
+                    <h3>t-shirt 8</h3>
+                    <div class="price">$15:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/t shirt12.jpeg"  alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>t-shirt 9</h3>
+                    <div class="price">$15:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="product"   id="product">
+        <h1 class="heading">New <span>hoodies</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies 1.jpeg"   alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                      
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 1</h3>
+                    <div class="price">$15:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+
+
+            <div class="box">
+                <span class="discount">-10%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies 2.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 2</h3>
+                    <div class="price">$15:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-5%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies 3.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                    
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 3</h3>
+                    <div class="price">$18:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+            
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies 4.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                     
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 4</h3>
+                    <div class="price">$14:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <span class="discount">-15%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies5.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 5</h3>
+                    <div class="price">$14:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="discount">-11%</span>
+                <div class="img">
+                    <img src="./pic/assests/hoodies 6.jpeg" alt="">
+                    <div class="icons">
+                        <a href="#" class="fa-solid fa-heart"></a>
+                       
+                        <a href="#" class="fa-solid fa-share"></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h3>Hoodie 6</h3>
+                    <div class="price">$16:00 </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    <section class="contact"  id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>
+        <div class="row">
+            <form class="action">
+                <input type="text"  placeholder="name"   class="box">
+                <input type="email"  placeholder="email"   class="box">
+                <input type="number"  placeholder="number"   class="box">
+                <textarea name=""  class="box"   placeholder="message"  id=""  cols="30" rows="10"></textarea>
+                <input type="submit"  value="send message"  class="btn" >
+            </form>
+            <div class="image">
+                <img src="./pic/assests/man img 2.webp" width="350px"   height="10%" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick link</h3>
+                <a href="#">Home</a>
+                <a href="#">about</a>
+                <a href="#">product</a>
+                <a href="#">review</a>
+                <a href="#">contact</a>
+
+            </div>
+
+            <div class="box">
+                <h3>extra link</h3>
+                <a href="#">my account</a>
+                <a href="#">my order</a>
+                <a href="#">my favorites</a>
+            </div>
+
+            <div class="box">
+                <h3>location</h3>
+                <a href="#">Pakistan</a>
+                <a href="#">USA</a>
+                <a href="#">Dubai</a>
+                <a href="#">france</a>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+01222222222</a>
+                
+                <a href="#">31tm.ouqeer@gmail.com</a>
+                
+
+            </div>
+        </div>
+        <div class="credit">created by <span>@Muhammad Touqeer</span> all right reserved</div> 
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentUser = localStorage.getItem('currentUser');
+            if (!currentUser) {
+                alert('Please login first.');
+                window.location.href = 'index.html';
+            }
+
+            const addToCartButtons = document.querySelectorAll('.cart-btn');
+            const cartKey = `cart_${currentUser}`;
+            let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+            document.querySelectorAll('.quantity-controls').forEach(control => {
+                const minusBtn = control.querySelector('.minus');
+                const plusBtn = control.querySelector('.plus');
+                const quantityDisplay = control.querySelector('.quantity');
+
+                minusBtn.addEventListener('click', () => {
+                    let quantity = parseInt(quantityDisplay.innerText);
+                    if (quantity > 1) {
+                        quantity--;
+                        quantityDisplay.innerText = quantity;
+                    }
+                });
+
+                plusBtn.addEventListener('click', () => {
+                    let quantity = parseInt(quantityDisplay.innerText);
+                    quantity++;
+                    quantityDisplay.innerText = quantity;
+                });
+            });
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const productBox = button.closest('.box');
+                    const productName = productBox.querySelector('h3').innerText;
+                    const productPrice = productBox.querySelector('.price').innerText;
+                    const productImage = productBox.querySelector('img').src;
+                    const productQuantity = parseInt(productBox.querySelector('.quantity').innerText);
+
+                    const product = {
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: productQuantity
+                    };
+
+                    const existingProduct = cart.find(p => p.name === productName);
+                    if (existingProduct) {
+                        existingProduct.quantity += productQuantity;
+                    } else {
+                        cart.push(product);
+                    }
+
+                    localStorage.setItem(cartKey, JSON.stringify(cart));
+                    alert(`${productQuantity} ${productName}(s) added to cart!`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Brand</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
     .quantity-controls {
         display: flex;
         align-items: center;
@@ -61,7 +729,7 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#product">Product</a>
-            <a href="profile.html">Profile</a>
+            <a href="sell.html">Profile</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="icons">
@@ -599,4 +1267,12 @@
 </script>
 </body>
 
-</html>
+</html> -->
+
+
+
+
+
+
+
+

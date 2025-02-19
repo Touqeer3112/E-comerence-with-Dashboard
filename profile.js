@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cartItemsContainer.appendChild(productDiv);
         });
     }
-
+    
     checkoutBtn.addEventListener('click', () => {
         popup.style.display = 'flex';
     });
