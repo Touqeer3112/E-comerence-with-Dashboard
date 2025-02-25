@@ -6,8 +6,7 @@
     <title>Sell Items</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        
-        * {
+              * {
             margin: 0;
             padding: 0;
             border: none;
@@ -325,7 +324,6 @@
         </div>
     </div>
 
-    
     <div class="popup" id="add-product-popup">
         <div class="popup-content">
             <span class="close-btn" id="close-popup">&times;</span>
@@ -353,12 +351,10 @@
             const productForm = document.getElementById('product-form');
             const tableBody = document.getElementById('sell-table-body');
 
-          
             addProductBtn.addEventListener('click', function () {
                 addProductPopup.style.display = 'flex';
             });
 
-           
             closePopupBtn.addEventListener('click', function () {
                 addProductPopup.style.display = 'none';
             });
@@ -382,7 +378,6 @@
                     addedViaPopup: true 
                 };
 
-                
                 const orderKey = `order_${currentUser}`;
                 const order = JSON.parse(localStorage.getItem(orderKey)) || { cart: [], address: "N/A", city: "N/A", zipcode: "N/A" };
                 order.cart.push(product);
@@ -392,7 +387,6 @@
                 addProductPopup.style.display = 'none';
                 productForm.reset();
 
-               
                 displayOrderHistory();
             });
 
@@ -430,7 +424,6 @@
                 }
             }
 
-         t
             function deleteProduct(index) {
                 const orderKey = `order_${currentUser}`;
                 const order = JSON.parse(localStorage.getItem(orderKey)) || { cart: [], address: "N/A", city: "N/A", zipcode: "N/A" };
@@ -439,34 +432,11 @@
                 displayOrderHistory();
             }
 
-           
             displayOrderHistory();
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
